@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Notifier</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Campus Notifier</h1>
+      <div class="login-box">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="search-section">
+        <input type="text" id="searchInput" placeholder="What did Sir say about...?" oninput="searchQuery()">
+      </section>
+
+      <section class="filters">
+        <button onclick="filterBy('All')">All</button>
+        <button onclick="filterBy('Urgent')">Urgent</button>
+        <button onclick="filterBy('LMS')">LMS</button>
+        <button onclick="filterBy('WhatsApp')">WhatsApp</button>
+      </section>
+
+      <section class="notification-dashboard" id="dashboard">
+        <!-- Dummy notifications -->
+        <div class="card" data-category="Urgent">📢 Exam postponed to Friday</div>
+        <div class="card" data-category="LMS">📝 Assignment 3 uploaded</div>
+        <div class="card" data-category="WhatsApp">📩 Sir shared lecture slides</div>
+        <div class="card" data-category="Urgent">⚠️ Project deadline is tomorrow</div>
+      </section>
+
+      <section class="calendar">
+        <h2>📅 Upcoming Deadlines</h2>
+        <ul>
+          <li>📌 Assignment 3 – Apr 10</li>
+          <li>📌 Project Report – Apr 15</li>
+        </ul>
+      </section>
+
+      <button class="panic-btn" onclick="showPanic()">🚨 Where’s my exam hall?</button>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
